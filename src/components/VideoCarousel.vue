@@ -1,8 +1,11 @@
 <template>
-    <div class="hello">
+    <div class="video-carousel">
         <h1>{{ carouselTitle }}</h1>
         <ul>
-            <li v-for="video in carouselVideos" :key="video">
+            <li :id="`video-carousel__item-${video}`"
+                class="video-carousel__item"
+                v-for="video in carouselVideos"
+                :key="video">
                 <router-link to="/">
                     Home
                 </router-link>
