@@ -1,5 +1,7 @@
 # simplestream-coding-test
 
+This SPA focuses on giving users the ability of watching videos provided via an API 
+
 ## Project setup
 ```
 npm install
