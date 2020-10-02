@@ -1,18 +1,22 @@
 <template>
     <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png">
-        <HelloWorld msg="Welcome to Your Vue.js App"/>
+        <video-carousel carousel-title="Available Videos"
+                        :carousel-videos="carouselVideos"/>
     </div>
 </template>
 
 <script>
-    // @ is an alias to /src
-    import HelloWorld from '@/components/HelloWorld.vue'
+    import VideoCarousel from '@/components/VideoCarousel.vue'
 
     export default {
         name: 'Home',
         components: {
-            HelloWorld
+            VideoCarousel
+        },
+        data () {
+            return {
+                carouselVideos: []
+            }
         }
     }
 </script>
