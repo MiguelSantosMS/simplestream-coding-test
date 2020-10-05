@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <h1 class="video-carousel__title view-title">{{ carouselTitle }}</h1>
-        <video-carousel carousel-list-id="video-carousel-list"
+        <video-carousel carousel-list-identifier="video-carousel-list"
                         :carousel-videos="carouselVideos"/>
     </div>
 </template>

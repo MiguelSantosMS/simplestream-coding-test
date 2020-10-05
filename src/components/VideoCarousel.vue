@@ -33,13 +33,14 @@
         components: { BaseIcon, BaseVideoThumbnail },
         data () {
             return {
+                carouselListId: this.carouselListIdentifier,
                 leftArrowVisible: false,
                 rightArrowVisible: true,
                 translatePosition: 0
             }
         },
         props: {
-            carouselListId: {
+            carouselListIdentifier: {
                 type: String
             },
             carouselVideos: {
