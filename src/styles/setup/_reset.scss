@@ -1,0 +1,86 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set core body defaults */
+body {
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol and li elements */
+ol, ul, li {
+    list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* A elements have no text decoration */
+a {
+    text-decoration: none;
+}
+
+/* Make images easier to work with */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+    margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove the outline from focused elements */
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+button:active {
+    outline: none 0;
+}
+
+/* Hide arrows for input type number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

@@ -1,0 +1,43 @@
+/* Import setup scss files */
+@import '../setup/normalize';
+@import '../setup/reset';
+@import '../setup/mixin';
+
+/* Import base components scss */
+@import './base-video-thumbnail';
+
+/* Import components scss files */
+@import '../components/videocarousel';
+
+/* Import views scss files */
+@import '../views/watchvideo';
+
+/* Basic application styling */
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    color: #232323;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.app-title-container {
+    padding: 20px 40px;
+    @include bar-shadow;
+
+    .app-title {
+        color: #707070;
+        font-weight: normal;
+    }
+}
+
+.view-title {
+    color: #232323;
+    padding: 20px 40px;
+}
