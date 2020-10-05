@@ -5,6 +5,9 @@ import router from './router'
 // Import the global styling
 import './styles/basics/base.scss'
 
+// Import video.js styling
+import 'video.js/dist/video-js.css'
+
 Vue.config.productionTip = false
 
 new Vue({

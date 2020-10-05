@@ -1,5 +1,5 @@
 <template>
-    <div class="base-icon-container" @click="clickAction">
+    <div class="base-icon-container" @click="iconClicked">
         <img :src="resolveIconPath" :alt="iconName"/>
     </div>
 </template>
@@ -12,20 +12,17 @@
             iconExtension: {
                 type: String,
                 default: 'svg'
-            },
-            clickAction: {
-                type: Function,
-                default: () => true
             }
         },
         computed: {
             resolveIconPath () {
                 return require(`../../assets/icons/${this.iconName}.${this.iconExtension}`)
             }
+        },
+        methods: {
+            iconClicked () {
+                this.$emit('icon-clicked')
+            }
         }
     }
 </script>
-
-<style scoped>
-
-</style>

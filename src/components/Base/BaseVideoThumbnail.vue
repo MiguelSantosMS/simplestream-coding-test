@@ -1,5 +1,5 @@
 <template>
-    <div class="base-video-thumbnail-container thumbnail">
+    <div class="base-video-thumbnail-container thumbnail" @click="this.thumbnailClicked">
         <img class="base-video-thumbnail__image" :src="video.poster" :alt="video.title"/>
     </div>
 </template>
@@ -10,6 +10,11 @@
         props: {
             video: {
                 type: Object
+            }
+        },
+        methods: {
+            thumbnailClicked () {
+                this.$emit('thumbnail-clicked')
             }
         }
     }

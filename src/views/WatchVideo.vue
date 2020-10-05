@@ -2,31 +2,36 @@
     <div class="watch-video">
         <h1 class="watch-video__title view-title">Watch Video</h1>
         <h2 class="watch-video__video-title">{{ videoToWatch.title }}</h2>
-        <div class="watch-video__thumbnail-container">
-            <base-video-thumbnail class="watch-video-thumbnail" :video="videoToWatch"></base-video-thumbnail>
-            <base-icon class="watch-video__play-icon"
-                       icon-name="btn-play"
-                       icon-extension="png"
-                       :click-action="playVideo"></base-icon>
+        <div class="watch-video__view-container">
+            <video-player :options="videoOptions" :video-poster="videoToWatch.poster"/>
         </div>
     </div>
 </template>
 
 <script>
-    import BaseVideoThumbnail from '@/components/Base/BaseVideoThumbnail'
-    import BaseIcon from '@/components/Base/BaseIcon'
+    import VideoPlayer from '@/components/VideoPlayer'
 
     export default {
         name: 'WatchVideo',
-        components: { BaseIcon, BaseVideoThumbnail },
+        components: { VideoPlayer },
+        data () {
+            return {
+                videoOptions: {
+                    autoplay: false,
+                    controls: true,
+                    height: 600,
+                    sources: [
+                        {
+                            src: this.videoToWatch.video,
+                            type: `video/${this.videoToWatch.video.slice(-3)}`
+                        }
+                    ]
+                }
+            }
+        },
         props: {
             videoToWatch: {
                 type: Object
-            }
-        },
-        methods: {
-            playVideo () {
-                return true
             }
         }
     }

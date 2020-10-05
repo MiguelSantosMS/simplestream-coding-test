@@ -4,7 +4,7 @@
             <base-icon v-if="leftArrowVisible"
                        class="carousel-container__arrow left-arrow"
                        icon-name="left-arrow"
-                       :click-action="slideListRight"></base-icon>
+                       @icon-clicked="slideListRight"></base-icon>
             <ul :id="carouselListId" class="video-carousel__carousel-list">
                 <li :id="`carousel-container__carousel-item-${index}`"
                     class="carousel-container__carousel-item"
@@ -19,7 +19,7 @@
             <base-icon v-if="rightArrowVisible"
                        class="carousel-container__arrow right-arrow"
                        icon-name="right-arrow"
-                       :click-action="slideListLeft"></base-icon>
+                       @icon-clicked="slideListLeft"></base-icon>
         </div>
     </div>
 </template>
