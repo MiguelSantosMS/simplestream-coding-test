@@ -14,7 +14,8 @@
                 default: 'svg'
             },
             clickAction: {
-                type: Function
+                type: Function,
+                default: () => true
             }
         },
         computed: {

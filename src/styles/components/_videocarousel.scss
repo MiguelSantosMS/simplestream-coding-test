@@ -1,48 +1,46 @@
-.video-carousel {
-    .video-carousel__carousel-container {
-        position: relative;
-        overflow: hidden;
+.video-carousel .video-carousel__carousel-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+
+    @include disable-select;
+
+    .video-carousel__carousel-list {
         display: flex;
         flex-direction: row;
+        transition: all .25s ease-in-out;
+    }
 
-        @include disable-select;
+    .carousel-container__arrow {
+        display: flex;
+        align-self: center;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 70px;
+        width: 70px;
+        z-index: 10;
+        border-radius: 70px;
+        background-color: rgba(255, 255, 255, .8);
+        transition: all .25s ease-in-out;
 
-        .video-carousel__carousel-list {
-            display: flex;
-            flex-direction: row;
-            transition: all .25s ease-in-out;
+        img {
+            margin: auto;
         }
 
-        .carousel-container__arrow {
-            display: flex;
-            align-self: center;
-            position: absolute;
-            background-repeat: no-repeat;
-            background-size: contain;
-            height: 70px;
-            width: 70px;
-            z-index: 10;
-            border-radius: 70px;
-            background-color: rgba(255, 255, 255, .8);
-            transition: all .25s ease-in-out;
+        &.left-arrow {
+            left: 0;
+        }
 
-            img {
-                margin: auto;
-            }
+        &.right-arrow {
+            right: 0;
+        }
 
-            &.left-arrow {
-                left: 0;
-            }
-
-            &.right-arrow {
-                right: 0;
-            }
-
-            &:hover {
-                background-color: rgba(255, 255, 255, 1);
-                cursor: pointer;
-                @include drop-shadow;
-            }
+        &:hover {
+            background-color: rgba(255, 255, 255, 1);
+            cursor: pointer;
+            @include drop-shadow;
         }
     }
 }

@@ -14,11 +14,11 @@
 
 /* Basic application styling */
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: Ubuntu, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
-    color: #232323;
+    color: #303030;
 }
 
 body {
@@ -27,14 +27,11 @@ body {
     overflow-y: hidden;
 }
 
-.app-title-container {
+.app-top-bar {
+    display: flex;
     padding: 20px 40px;
+    background-color: #13598d;
     @include bar-shadow;
-
-    .app-title {
-        color: #707070;
-        font-weight: normal;
-    }
 }
 
 .view-title {
