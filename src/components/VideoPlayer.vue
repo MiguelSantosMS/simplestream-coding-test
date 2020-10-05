@@ -1,13 +1,8 @@
 <template>
     <div class="video-player-container" @click="togglePlayState">
         <video ref="videoPlayer" class="video-js"></video>
-        <base-icon v-if="videoPaused"
-                   class="watch-video__play-icon"
-                   icon-name="btn-play"
-                   icon-extension="png"></base-icon>
-        <base-icon v-else
-                   class="watch-video__pause-icon"
-                   icon-name="btn-pause"
+        <base-icon class="watch-video__icon"
+                   :icon-name="iconName"
                    icon-extension="png"></base-icon>
     </div>
 </template>
@@ -33,12 +28,12 @@
         data () {
             return {
                 player: null,
-                videoPaused: true
+                iconName: 'btn-play'
             }
         },
         methods: {
             togglePlayState () {
-                this.videoPaused = this.player.paused()
+                this.iconName = this.player.paused() ? 'btn-play' : 'btn-pause'
             }
         },
         mounted () {

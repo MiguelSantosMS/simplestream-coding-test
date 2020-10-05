@@ -13,8 +13,7 @@
         .video-player-container {
             cursor: pointer;
 
-            .watch-video__play-icon,
-            .watch-video__pause-icon {
+            .watch-video__icon {
                 position: absolute;
                 visibility: hidden;
                 transition: all linear 0.25s;
@@ -32,7 +31,6 @@
                 }
             }
 
-            .watch-video-thumbnail,
             .video-js {
                 position: relative;
 
@@ -53,13 +51,11 @@
             }
 
             &:hover {
-                .watch-video-thumbnail:after,
                 .video-js:after {
                     background-color: rgba(0, 0, 0, 0.3);
                 }
 
-                .watch-video__play-icon,
-                .watch-video__pause-icon {
+                .watch-video__icon {
                     visibility: visible;
                 }
             }
