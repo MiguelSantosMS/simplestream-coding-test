@@ -39,10 +39,6 @@ describe('VideoCarousel.vue', () => {
         wrapper.destroy()
     })
 
-    it('renders props.carouselTitle when valu is passed', () => {
-        expect(wrapper.text()).toMatch(carouselTitle)
-    })
-
     it('renders carousel elements', () => {
         const carouselVideoElements = wrapper.findAll('.carousel-container__carousel-item')
         expect(carouselVideoElements.length).toBe(carouselVideos.length)
