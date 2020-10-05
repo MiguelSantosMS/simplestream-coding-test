@@ -1,6 +1,7 @@
 <template>
     <div class="home">
-        <video-carousel carousel-title="Available Videos"
+        <h1 class="video-carousel__title view-title">{{ carouselTitle }}</h1>
+        <video-carousel carousel-list-id="video-carousel-list"
                         :carousel-videos="carouselVideos"/>
     </div>
 </template>
@@ -15,7 +16,19 @@
         },
         data () {
             return {
+                carouselTitle: 'Available Videos',
                 carouselVideos: []
+            }
+        },
+        async mounted () {
+            try {
+                const fetchMoviesResponse = await fetch(
+                    'http://hybridtv.ss7.tv/techtest/movies.json'
+                )
+                const jsonMoviesResponse = await fetchMoviesResponse.json()
+                this.carouselVideos = jsonMoviesResponse.data
+            } catch (error) {
+                console.log(error)
             }
         }
     }
